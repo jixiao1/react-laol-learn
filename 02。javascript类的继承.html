@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>类的继承</title>
+</head>
+<body>
+  <script>
+    /// 面向对象的语言： 三大特性；封装/继承/多态
+    // 继承的优势：1.减少重复代码 2.多态的前提
+    class person {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age
+      }
+      run () {
+        console.log("开始跑路的方法.....")
+      }
+    }
+    class Student extends person {
+      // 构造器函数
+      constructor(name, age, sto) {
+        super(name, age) // 子类继承父类的属性和方法
+        this.sto = sto
+      }
+    }
+    let student = new Student('jixiao', 20, 120)
+    student.run()
+    console.log(student)
+
+    class Teacher extends person {
+      constructor(name, age, title) {
+        super(name, age)
+        this.title = title
+      }
+    }
+    let teacher = new Teacher('zs', 18, '优秀的教师')
+    teacher.run()
+    console.log(teacher)
+  </script>
+</body>
+</html>

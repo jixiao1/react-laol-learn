@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript中类的定义</title>
+</head>
+<body>
+  <script>
+    // es创建类
+    function person (name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    person.prototype.say = function () {
+      console.log("开始说话的方法....")
+    }
+    person.prototype.run = function () {
+      console.log("开始跑路的方法。。。。")
+    }
+    var p = new person('why', 18)
+    p.say();
+    p.run()
+    console.log(p)
+
+    //es6开始创建类
+    class person1 {
+      constructor(name, age) {
+        // super()
+        this.name = name;
+        this.age = age;
+      }
+      run () {
+        console.log("开始跑路的方法 。。。。。。111")
+      }
+    }
+    var p1 = new person1('whiyte', 20)
+    p1.run()
+    console.log(p1)
+  </script>
+</body>
+</html>

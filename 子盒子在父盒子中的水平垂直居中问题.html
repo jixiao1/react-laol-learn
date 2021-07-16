@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>水平垂直居中问题</title>
+  <style>
+    /* .father {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: rosybrown;
+    } */
+    /* display： flex; */
+    /* .father {
+      width: 500px;
+      height: 500px;
+      background-color: red;
+      position: relative
+    }
+    .child {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    } */
+
+    .father{
+    display: table-cell;
+    width: 400px;
+    height: 400px;
+    vertical-align: middle;
+    text-align: center;
+}
+.child{
+    display: inline-block;
+    vertical-align: middle;
+
+}
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="child"></div>
+  </div>
+</body>
+</html>
