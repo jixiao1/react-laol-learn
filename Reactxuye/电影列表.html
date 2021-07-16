@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React核心代码</title>
+    <!-- 加载 React。-->
+  <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+</head>
+<body>
+  <div id="app"></div>
+ <!-- 加载 React。-->
+  <!-- 注意: 部署时，将 "development.js" 替换为 "production.min.js"。-->
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <script type="text/babel">
+  class App extends React.Component {
+    constructor () {
+      super()
+      this.state = {
+        movies: ['大话西游', '西游戏', '三国演义', '水浒传']
+      }
+    }
+    ListArr () {
+      let { movies } = this.state
+      let listArr1 = []
+      movies.forEach((item, index) => {
+        listArr1.push(<li key={index}>{item}</li>)
+      })
+      return listArr1
+    }
+    ListArr1 () {
+      let { movies } = this.state
+      let listArr2 = []
+      for(let elem of movies) {
+        listArr2.push(<li key={elem}>{elem}</li>)
+      }
+      return listArr2
+    }
+    ListArr2 () {
+      let { movies } = this.state
+      let listArr3 = []
+      listArr3 =movies.map(item => {
+        return <li key={item}>{item}</li>
+      })
+      return listArr3
+    }
+    ListArr3 () {
+      let { movies } = this.state
+      let listArr4 = []
+      for(let i = 0; i<= movies.length; i++) {
+        listArr4.push(<li key={i}>{movies[i]}</li>)
+      }
+      return listArr4
+    }
+    render () {
+      let { movies } = this.state
+      return (
+        <div>
+          <h1>电影列表1</h1>
+          <ul>
+             {this.ListArr()}
+            </ul>
+            <h1>电影列表2</h1>
+          <ul>
+             {this.ListArr1()}
+            </ul>
+            <h1>电影列表3</h1>
+          <ul>
+             {this.ListArr2()}
+            </ul>
+            <h1>电影列表4</h1>
+          <ul>
+             {
+               movies.map(item => {
+                 return <li key={item}>{item}</li>
+               })
+             }
+            </ul>
+            <h1>电影列表5</h1>
+          <ul>
+             {
+              this.ListArr3()
+             }
+            </ul>
+          </div>
+      )
+    }
+  }
+   ReactDOM.render(<App></App>, document.getElementById('app'))
+  </script>
+</body>
+</html>
